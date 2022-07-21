@@ -5,6 +5,8 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 3.2rem 0;
+  max-width: 112rem;
+  margin: 0 auto;
 `
 
 export const ActionContainer = styled.div`
