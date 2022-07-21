@@ -12,6 +12,11 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 0 0 0 2px ${(props) => props.theme['purple-500']};
   }
 
+  a{
+    text-decoration: none ;
+    cursor:pointer ;
+  }
+
   html {
     font-size: 62.5%;
   }
