@@ -33,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
   }
 
-  header{
+  h1, h2, h3, h4{
     font-family: ${(props) => props.theme.fontHeader['font-family']};
   }
 `
