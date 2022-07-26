@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 import IntroBg from '../../assets/background.svg'
 
+type IconBgType = 'yellow-700' | 'yellow-500' | 'gray-700' | 'purple-500'
+
 export const IntroBackground = styled.section`
   background-image: url(${IntroBg});
   background-size: cover;
@@ -33,5 +35,34 @@ export const IntroContainer = styled.div`
     font-weight: normal;
     color: ${(props) => props.theme['gray-800']};
     line-height: 1.3;
+  }
+`
+
+export const ItemsContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 6.6rem;
+`
+
+export const ItemIntro = styled.div<{ iconBg: IconBgType }>`
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  svg {
+    color: ${(props) => props.theme.white};
+    background-color: ${(props) => props.theme[props.iconBg]};
+    padding: 0.8rem;
+    border-radius: 50%;
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  span {
+    font-family: Roboto, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: ${(props) => props.theme['gray-700']};
   }
 `
