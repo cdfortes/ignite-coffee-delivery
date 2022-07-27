@@ -25,15 +25,15 @@ export function Home() {
             </ItemIntro>
             <ItemIntro iconBg="gray-700">
               <Package size={16} weight="fill" />
-              <span>Compra simples e segura</span>
+              <span>Embalagem mantém o café intacto</span>
             </ItemIntro>
             <ItemIntro iconBg="yellow-500">
               <Timer size={16} weight="fill" />
-              <span>Compra simples e segura</span>
+              <span>Entrega rápida e rastreada</span>
             </ItemIntro>
             <ItemIntro iconBg="purple-500">
               <Coffee size={16} weight="fill" />
-              <span>Compra simples e segura</span>
+              <span>O café chega fresquinho até você</span>
             </ItemIntro>
           </ItemsContainer>
         </div>
