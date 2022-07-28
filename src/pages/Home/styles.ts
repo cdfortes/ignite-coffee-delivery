@@ -75,3 +75,15 @@ export const ItemIntro = styled.div<{ iconBg: IconBgType }>`
     width: 100%;
   }
 `
+
+export const CoffeeListContainer = styled.section`
+  max-width: 112rem;
+  margin: 0 auto;
+  padding-top: 3.2rem;
+
+  h2 {
+    color: ${(props) => props.theme['gray-900']};
+    font-weight: 800;
+    font-size: 3.2rem;
+  }
+`
