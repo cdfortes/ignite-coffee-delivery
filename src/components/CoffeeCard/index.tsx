@@ -1,4 +1,14 @@
-import { CoffeeCardContainer, Tags } from './styles'
+import { moneyFormat } from '../../utils/moneyFormat'
+import { QuantityInput } from '../QuantityInput'
+import {
+  CoffeeCardContainer,
+  Tags,
+  CoffeeCardFooter,
+  AddCartWrapper
+} from './styles'
+
+import { useState } from 'react'
+import { ShoppingCart } from 'phosphor-react'
 
 interface CoffeeCardProps {
   tags: string[]
@@ -8,7 +18,6 @@ interface CoffeeCardProps {
   price: number
 }
 
-import coffee from '../../assets/cafeComLeite.png'
 export const CoffeeCard = ({
   tags,
   name,
@@ -16,6 +25,16 @@ export const CoffeeCard = ({
   photo,
   price
 }: CoffeeCardProps) => {
+  const [quantity, setQuantity] = useState(1)
+
+  function handleIncrease() {
+    setQuantity((state) => state + 1)
+  }
+
+  function handleDecrease() {
+    setQuantity((state) => state - 1)
+  }
+  const priceFormatted = moneyFormat(price)
   return (
     <CoffeeCardContainer>
       <img src={photo} alt={name} />
@@ -26,9 +45,19 @@ export const CoffeeCard = ({
       </Tags>
       <h3>{name}</h3>
       <p>{description}</p>
-      <div>
-        <span>{price}</span>
-      </div>
+      <CoffeeCardFooter>
+        <span>{priceFormatted}</span>
+        <AddCartWrapper>
+          <QuantityInput
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+            quantity={quantity}
+          />
+          <button>
+            <ShoppingCart weight="fill" size={22} />
+          </button>
+        </AddCartWrapper>
+      </CoffeeCardFooter>
     </CoffeeCardContainer>
   )
 }
