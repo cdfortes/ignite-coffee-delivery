@@ -95,4 +95,5 @@ export const CoffeeList = styled.div`
   column-gap: 3.2rem;
   row-gap: 4rem;
   margin-top: 5.4rem;
+  margin-bottom: 15.7rem;
 `
