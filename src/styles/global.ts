@@ -33,6 +33,18 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
   }
 
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  ::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+
   h1, h2, h3, h4{
     font-family: ${(props) => props.theme.fontHeader['font-family']};
   }

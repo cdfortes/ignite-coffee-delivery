@@ -76,7 +76,7 @@ export const ItemIntro = styled.div<{ iconBg: IconBgType }>`
   }
 `
 
-export const CoffeeListContainer = styled.section`
+export const OurCoffesContainer = styled.section`
   max-width: 112rem;
   margin: 0 auto;
   padding-top: 3.2rem;
@@ -86,4 +86,14 @@ export const CoffeeListContainer = styled.section`
     font-weight: 800;
     font-size: 3.2rem;
   }
+`
+
+export const CoffeeList = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 3.2rem;
+  row-gap: 4rem;
+  margin-top: 5.4rem;
+  margin-bottom: 15.7rem;
 `

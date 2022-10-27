@@ -1,14 +1,16 @@
 import {
-  CoffeeListContainer,
+  OurCoffesContainer,
   IntroBackground,
   IntroContainer,
   ItemIntro,
-  ItemsContainer
+  ItemsContainer,
+  CoffeeList
 } from './styles'
 
 import CoffeeCup from '../../assets/Imagem.svg'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 import { CoffeeCard } from '../../components/CoffeeCard'
+import { coffees } from '../../data/db'
 
 export function Home() {
   return (
@@ -43,10 +45,14 @@ export function Home() {
           <img src={CoffeeCup} alt="Coffee Cup" />
         </IntroContainer>
       </IntroBackground>
-      <CoffeeListContainer>
+      <OurCoffesContainer>
         <h2>Nossos cafés</h2>
-        <CoffeeCard />
-      </CoffeeListContainer>
+        <CoffeeList>
+          {coffees.map((coffee) => (
+            <CoffeeCard key={coffee.id} coffee={coffee} />
+          ))}
+        </CoffeeList>
+      </OurCoffesContainer>
     </>
   )
 }
