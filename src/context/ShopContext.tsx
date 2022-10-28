@@ -1,14 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 import { produce } from 'immer'
-
-export interface Coffee {
-  id: number
-  tags: string[]
-  name: string
-  description: string
-  photo: string
-  price: number
-}
+import { Coffee } from '../components/CoffeeCard'
 
 export interface ShopItem extends Coffee {
   quantity: number
