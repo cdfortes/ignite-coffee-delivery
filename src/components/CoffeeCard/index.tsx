@@ -11,7 +11,8 @@ import { useState } from 'react'
 import { ShoppingCart } from 'phosphor-react'
 import { useShop } from '../../hooks/useShop'
 
-interface Coffee {
+export interface Coffee {
+  id: number
   tags: string[]
   name: string
   description: string
@@ -62,7 +63,7 @@ export const CoffeeCard = ({ coffee }: CoffeeProps) => {
             onDecrease={handleDecrease}
             quantity={quantity}
           />
-          <button>
+          <button onClick={handleAddToCart}>
             <ShoppingCart weight="fill" size={22} />
           </button>
         </AddCartWrapper>
