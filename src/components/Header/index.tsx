@@ -1,7 +1,7 @@
 import { HeaderContainer, ActionContainer, Localization, Cart } from './styles'
 
 import Logo from '../../assets/logo.svg'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import { useShop } from '../../hooks/useShop'
 
@@ -9,15 +9,16 @@ export const Header = () => {
   const { ShopQuantity } = useShop()
   return (
     <HeaderContainer>
-      <Link to="/">
+      <NavLink to="/">
         <img src={Logo} alt="Logo" />
-      </Link>
+      </NavLink>
       <ActionContainer>
         <Localization>
           <MapPin size={22} weight="fill" />
           <span>Porto Alegre, RS</span>
         </Localization>
-        <Cart>
+
+        <Cart to="/checkout">
           {ShopQuantity >= 1 && <span>{ShopQuantity}</span>}
           <ShoppingCart size={22} weight="fill" />
         </Cart>
