@@ -26,6 +26,7 @@ interface CoffeeProps {
 
 export const CoffeeCard = ({ coffee }: CoffeeProps) => {
   const [quantity, setQuantity] = useState(1)
+  const { addCoffeeToShop } = useShop()
 
   function handleIncrease() {
     setQuantity((state) => state + 1)
@@ -34,8 +35,6 @@ export const CoffeeCard = ({ coffee }: CoffeeProps) => {
   function handleDecrease() {
     setQuantity((state) => state - 1)
   }
-
-  const { addCoffeeToShop } = useShop()
 
   function handleAddToCart() {
     const coffeeToAdd = {
