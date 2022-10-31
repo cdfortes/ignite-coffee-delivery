@@ -1,40 +1,48 @@
+import { Trash } from 'phosphor-react'
 import { ShopItem } from '../../context/ShopContext'
 import { useShop } from '../../hooks/useShop'
+import { moneyFormat } from '../../utils/moneyFormat'
+import { QuantityInput } from '../QuantityInput'
+
+import {
+  CoffeeCartCardContainer,
+  ActionsContainer,
+  RemoveButton
+} from './styles'
 
 interface CoffeeCartCardProps {
   coffee: ShopItem
 }
 export function CoffeeCartCard({ coffee }: CoffeeCartCardProps) {
-  const { changeCartItemQuantity, removeCartItem } = useShop()
+  const { changeShopItemQuantity, removeShopItem } = useShop()
 
   function handleIncrease() {
-    changeCartItemQuantity(coffee.id, 'increase')
+    changeShopItemQuantity(coffee.id, 'increase')
   }
 
   function handleDecrease() {
-    changeCartItemQuantity(coffee.id, 'decrease')
+    changeShopItemQuantity(coffee.id, 'decrease')
   }
 
   function handleRemove() {
-    removeCartItem(coffee.id)
+    removeShopItem(coffee.id)
   }
 
   const coffeeTotal = coffee.price * coffee.quantity
 
-  const formattedPrice = formatMoney(coffeeTotal)
+  const formattedPrice = moneyFormat(coffeeTotal)
 
   return (
     <CoffeeCartCardContainer>
       <div>
         <img src={`/coffees/${coffee.photo}`} />
         <div>
-          <RegularText color="subtitle">{coffee.name}</RegularText>
+          <h2>{coffee.name}</h2>
           <ActionsContainer>
             <QuantityInput
               onIncrease={handleIncrease}
               onDecrease={handleDecrease}
               quantity={coffee.quantity}
-              size="small"
             />
             <RemoveButton type="button" onClick={handleRemove}>
               <Trash size={16} />

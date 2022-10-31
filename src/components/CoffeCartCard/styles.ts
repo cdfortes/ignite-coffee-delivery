@@ -5,7 +5,7 @@ export const CoffeeCartCardContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid ${({ theme }) => theme.colors['base-button']};
+  border-bottom: 1px solid ${({ theme }) => theme['gray-400']};
   padding-bottom: 1.5rem;
   margin-bottom: 1.5rem;
   > div {
@@ -39,18 +39,18 @@ export const RemoveButton = styled.button`
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  color: ${({ theme }) => theme.colors['base-text']};
+  color: ${({ theme }) => theme['gray-300']};
   font-size: 0.75rem;
   height: 100%;
   border: none;
-  background: ${({ theme }) => theme.colors['base-button']};
+  background: ${({ theme }) => theme['purple-500']};
   padding: 0 0.5rem;
   border-radius: 6px;
   transition: 0.4s;
   svg {
-    color: ${({ theme }) => theme.colors['brand-purple']};
+    color: ${({ theme }) => theme['gray-300']};
   }
   &:hover {
-    background: ${({ theme }) => theme.colors['base-hover']};
+    background: ${({ theme }) => theme['gray-400']};
   }
 `
